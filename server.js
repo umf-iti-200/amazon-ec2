@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const PORT = process.env.PORT || 8080;
+
 app.use(express.static('public'));
 
 function getRandomInt(max) {
@@ -14,6 +16,6 @@ app.get("/api/random", function (req, res) {
     res.json(rand);
 })
 
-app.listen(3000, function () {
-    console.log("The app is running at port 3000")
+app.listen(PORT, function () {
+    console.log("The app is running at port " + PORT)
 });
